@@ -1,6 +1,7 @@
 package com.example.springboot.models;
 
 import jakarta.persistence.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 @Entity //para fazer mapeamento entre a classe java e a entidade do banco
 @Table(name = "TB_PRODUCTS") //tabela produtos
-public class ProductModel implements Serializable { //serializacao: É o processo de converter um objeto em uma sequência de bytes
+public class ProductModel extends RepresentationModel<ProductModel> implements Serializable { //serializacao: É o processo de converter um objeto em uma sequência de bytes
     private static final long serialVersionUID = 1L;
 
     @Id
